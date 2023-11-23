@@ -12,7 +12,10 @@ function NavigationBarView({ children, withBackButton }) {
                     <Ionicons name="arrow-back-circle-sharp" size={45} />
                 </Pressable>
             ) : null}
-            <Text style={[styles.largeTitle, withBackButton ? { textAlign: 'right'} : { textAlign: 'left'}]}>{children}</Text>
+            <Text style={[styles.largeTitle, withBackButton ? { textAlign: 'center'} : { textAlign: 'left'}]}>{children}</Text>
+            <Pressable>
+                <Ionicons name="cart" size={45} />
+            </Pressable>
         </View>
     );
 }
@@ -30,5 +33,5 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 40,
         fontWeight: '700',
-    }
+    },
 });
