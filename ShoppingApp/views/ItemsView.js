@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native'
 
+import BaseView from '../components/BaseView';
+import NavigationBarView from '../components/NavigationBarView';
+
 function ItemsView() {
     return (
-        <View>
-            <Text>Items View</Text>
-        </View>
+        <BaseView>
+            <NavigationBarView withBackButton={true}>Categories</NavigationBarView>
+        </BaseView>
     );
 }
 
