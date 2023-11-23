@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import PRODUCTS from '../data/mocProducts'
+import { PRODUCTS } from '../data/mocProducts'
 
 const productsSlice = createSlice({
     name: 'products',

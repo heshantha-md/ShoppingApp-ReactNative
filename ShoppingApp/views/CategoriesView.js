@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import GridView from '../components/GridView';
+import GridRowView from '../components/GridRowView';
 import BaseView from '../components/BaseView';
 import NavigationBarView from '../components/NavigationBarView';
 
@@ -9,7 +9,8 @@ function CategoriesView() {
     const categories = useSelector(state => state.categories.items);
 
     function renderCategoryItem(itemData) {
-        return <GridView 
+        return <GridRowView 
+                id={itemData.item.id}
                 title={itemData.item.title}
                 imageUrl={itemData.item.imageUrl} />;
     };

@@ -1,13 +1,11 @@
 import { StyleSheet, View, Text, Pressable, Platform, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-function GridView({ id, title, imageUrl }) {
+function GridRowView({ id, title, imageUrl }) {
     const navigation = useNavigation();
 
     function gridItemPressHandler() {
-        navigation.navigate('ItemsView', {
-            categoryId: id,
-        })
+        navigation.navigate('ItemsView', {categoryId: id});
     };
     
     return (
@@ -29,7 +27,7 @@ function GridView({ id, title, imageUrl }) {
     );
 }
 
-export default GridView;
+export default GridRowView;
 
 const styles = StyleSheet.create({
     container: {
