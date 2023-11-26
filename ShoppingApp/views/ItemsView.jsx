@@ -1,11 +1,11 @@
 import { FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import BaseView from '../components/BaseView';
-import NavigationBarView from '../components/NavigationBarView';
-import ListRowView from '../components/ListRowView';
+import { BaseView } from '../components/BaseView';
+import { NavigationBarView } from '../components/NavigationBarView';
+import { ListRowView } from '../components/ListRowView';
 
-function ItemsView({ route }) {
+export const ItemsView = ({ route }) => {
     const products = useSelector((state) => state.products.items).filter((item) => item.catId === route.params.categoryId);
 
     function renderListItem(itemData) {
@@ -27,5 +27,3 @@ function ItemsView({ route }) {
         </BaseView>
     );
 }
-
-export default ItemsView;

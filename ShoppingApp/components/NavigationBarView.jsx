@@ -1,31 +1,30 @@
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, Text, Pressable } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import { BlurView } from 'expo-blur';
 
-function NavigationBarView({ children, withBackButton }) {
+export const NavigationBarView = ({ children, withBackButton}) => {
     const navigation = useNavigation();
     
     return (
-        <View style={styles.container}>
-            {withBackButton ? (
+        <BlurView intensity={100} style={styles.container}>
+            { withBackButton ? (
                 <Pressable onPress={() => navigation.goBack()}>
                     <Ionicons name="arrow-back-circle-sharp" size={45} />
                 </Pressable>
-            ) : null}
+            ) : null }
             <Text style={[styles.largeTitle, withBackButton ? { textAlign: 'center'} : { textAlign: 'left'}]}>{children}</Text>
             <Pressable>
                 <Ionicons name="cart" size={45} />
             </Pressable>
-        </View>
+        </BlurView>
     );
 }
 
-export default NavigationBarView;
-
 const styles = StyleSheet.create({
     container: {
-        marginTop: 70,
-        marginHorizontal: 7,
+        paddingTop: 70,
+        paddingHorizontal: 19,
         paddingBottom: 7,
         flexDirection: 'row'
     },

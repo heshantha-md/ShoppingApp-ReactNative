@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Pressable, Platform, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-function GridRowView({ id, title, imageUrl }) {
+export const GridRowView = ({ id, title, imageUrl, ...rest }) => {
     const navigation = useNavigation();
 
     function gridItemPressHandler() {
@@ -17,7 +17,10 @@ function GridRowView({ id, title, imageUrl }) {
                             pressed ? styles.buttonPressed : null,
                         ]}
                 onPress={gridItemPressHandler}>
-                        <ImageBackground style={styles.image} source={{uri: imageUrl}}>
+                        <ImageBackground 
+                            style={styles.image} 
+                            source={{uri: imageUrl}}
+                            blurRadius={12}>
                             <View style={styles.innerContainer}>
                                 <Text style={styles.title}>{title}</Text>
                             </View>
@@ -26,8 +29,6 @@ function GridRowView({ id, title, imageUrl }) {
         </View>
     );
 }
-
-export default GridRowView;
 
 const styles = StyleSheet.create({
     container: {
@@ -38,8 +39,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         elevation: 4,
         shadowColor: 'black',
-        shadowOpacity: 0.15,
-        shadowRadius: 5,
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
         shadowOffSet: { width: 0, height: 0 },
         overflow: Platform.OS === 'android' ? 'hidden' : 'visible'
     },

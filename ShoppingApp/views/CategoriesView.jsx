@@ -1,14 +1,15 @@
 import { StyleSheet, View, Text, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import GridRowView from '../components/GridRowView';
-import BaseView from '../components/BaseView';
-import NavigationBarView from '../components/NavigationBarView';
+import { GridRowView } from '../components/GridRowView';
+import { BaseView } from '../components/BaseView';
+import { NavigationBarView } from '../components/NavigationBarView';
 
-function CategoriesView() {
+export const CategoriesView = () => {
     const categories = useSelector(state => state.categories.items);
 
     function renderCategoryItem(itemData) {
+
         return <GridRowView 
                 id={itemData.item.id}
                 title={itemData.item.title}
@@ -27,8 +28,6 @@ function CategoriesView() {
         </BaseView>
     );
 }
-
-export default CategoriesView;
 
 const styles = StyleSheet.create({
     list: {

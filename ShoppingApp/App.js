@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 
-import CategoriesView from './views/CategoriesView';
-import ItemsView from './views/ItemsView';
-import ItemDetailsView from './views/ItemDetailsView';
+import { CategoriesView } from './views/CategoriesView';
+import { ItemsView } from './views/ItemsView';
+import { ItemDetailsView } from './views/ItemDetailsView';
 import { store } from './store/store';
 
 const stack = createNativeStackNavigator();

@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Image, Pressable, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-function ListRowView({ id, title, price, imageUrl }) {
+export const ListRowView = ({ id, title, price, imageUrl }) => {
     const navigation = useNavigation();
 
     function listItemPressHandler() {
@@ -32,8 +32,6 @@ function ListRowView({ id, title, price, imageUrl }) {
     );
 };
 
-export default ListRowView;
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         elevation: 4,
         shadowColor: 'black',
-        shadowOpacity: 0.15,
+        shadowOpacity: 0.25,
         shadowRadius: 5,
         shadowOffSet: { width: 0, height: 0 },
         overflow: Platform.OS === 'android' ? 'hidden' : 'visible'
@@ -73,10 +71,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         paddingVertical: 4,
         paddingHorizontal: 14,
-        borderRadius: 20
+        borderRadius: 20,
+        justifyContent: 'center'
     },
     price: {
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
     }
 });
