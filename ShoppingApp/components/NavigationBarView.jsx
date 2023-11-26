@@ -1,7 +1,9 @@
 import { StyleSheet, Text, Pressable } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { BlurView } from 'expo-blur';
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+import { CartButton } from './CartButton';
 
 export const NavigationBarView = ({ children, withBackButton}) => {
     const navigation = useNavigation();
@@ -14,9 +16,7 @@ export const NavigationBarView = ({ children, withBackButton}) => {
                 </Pressable>
             ) : null }
             <Text style={[styles.largeTitle, withBackButton ? { textAlign: 'center'} : { textAlign: 'left'}]}>{children}</Text>
-            <Pressable>
-                <Ionicons name="cart" size={45} />
-            </Pressable>
+            <CartButton count={88} />
         </BlurView>
     );
 }

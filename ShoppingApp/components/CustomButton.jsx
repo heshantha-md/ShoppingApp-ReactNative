@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         shadowOpacity: 0.55,
         shadowOffset: {width: 0, height: 2},
-        shadowRadius: 5,
+        shadowRadius: 4,
         overflow: Platform.OS === 'android' ? 'hidden' : 'visible'
     },
     onPress: {
