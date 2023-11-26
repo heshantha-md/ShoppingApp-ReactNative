@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, ImageBackground, Pressable, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, ScrollView, Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
  
 import { BaseView } from '../components/BaseView';
@@ -12,6 +12,9 @@ export const ItemDetailsView = ({ route }) => {
 
     const customButtonOnPressHandler = () => {
         dispatch(addItem({id: product.id}));
+        Alert.alert('Added To Cart', '\nItem successfully added to your shopping cart.', [
+            {text: 'OK'},
+        ]);
     };
 
     return (
