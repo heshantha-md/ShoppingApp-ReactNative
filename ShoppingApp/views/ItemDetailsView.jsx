@@ -1,12 +1,18 @@
 import { StyleSheet, View, Text, ImageBackground, Pressable, Dimensions, ScrollView } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
  
 import { BaseView } from '../components/BaseView';
 import { NavigationBarView } from '../components/NavigationBarView';
 import { CustomButton } from '../components/CustomButton';
+import { addItem } from '../store/bucket';
 
 export const ItemDetailsView = ({ route }) => {
     const product = useSelector((state) => state.products.items).filter((item) => item.id === route.params.productId)[0];
+    const dispatch = useDispatch();
+
+    const customButtonOnPressHandler = () => {
+        dispatch(addItem({id: product.id}));
+    };
 
     return (
         <ImageBackground style={styles.imageBackground} source={{url: product.imageUrl}}>
@@ -22,7 +28,9 @@ export const ItemDetailsView = ({ route }) => {
                     <ScrollView>
                         <Text style={styles.description}>{product.description}</Text>
                     </ScrollView>
-                    <CustomButton style={styles.overlay} title={'Add To Cart'} />
+                    <CustomButton
+                        style={styles.overlay} title={'Add To Cart'} 
+                        onPress={customButtonOnPressHandler} />
                 </View>
             </BaseView>
         </ImageBackground>

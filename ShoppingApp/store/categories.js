@@ -13,5 +13,5 @@ const categoriesSlice = createSlice({
     }
 });
 
-export const refreshCategories = categoriesSlice.actions.categoriesSlice;
+export const refreshCategories = categoriesSlice.actions.refreshCategories;
 export default categoriesSlice.reducer;

@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { CategoriesView } from './views/CategoriesView';
 import { ItemsView } from './views/ItemsView';
 import { ItemDetailsView } from './views/ItemDetailsView';
+import { CartView } from './views/CartView';
 import { store } from './store/store';
 
 const stack = createNativeStackNavigator();
@@ -27,6 +28,7 @@ export default function App() {
                   }} />
                   <stack.Screen name='ItemsView' component={ItemsView} />
                   <stack.Screen name='ItemDetailsView' component={ItemDetailsView} />
+                  <stack.Screen name='CartView' component={CartView} />
                 </stack.Navigator>
           </NavigationContainer>
       </Provider>
