@@ -18,12 +18,12 @@ export const ItemDetailsView = ({ route }) => {
     };
 
     return (
-        <ImageBackground style={styles.imageBackground} source={{url: product.imageUrl}}>
-            <NavigationBarView withBackButton={true}>Products</NavigationBarView>
+        <ImageBackground style={styles.imageBackground} source={{uri: product.imageUrl}}>
+            <NavigationBarView withBackButton={true} isBlur={true}>Products</NavigationBarView>
             <BaseView style={styles.container}>
                 <View style={styles.detailsContainer}>
                     <View style={styles.textTopContaier}>
-                        <Text style={styles.title}>{product.title}</Text>
+                        <Text style={styles.title}>{product.tritle}</Text>
                         <View style={styles.priceContainer}>
                             <Text style={styles.price}>{'£' + product.price}</Text>
                         </View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     overlay: {
         position: 'absolute',
         right: 0,
-        bottom: 30,
+        bottom: 0,
         left: 0
     },
     title: {
