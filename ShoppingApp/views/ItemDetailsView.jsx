@@ -23,7 +23,7 @@ export const ItemDetailsView = ({ route }) => {
             <BaseView style={styles.container}>
                 <View style={styles.detailsContainer}>
                     <View style={styles.textTopContaier}>
-                        <Text style={styles.title}>{product.tritle}</Text>
+                        <Text style={styles.title}>{product.title}</Text>
                         <View style={styles.priceContainer}>
                             <Text style={styles.price}>{'£' + product.price}</Text>
                         </View>
